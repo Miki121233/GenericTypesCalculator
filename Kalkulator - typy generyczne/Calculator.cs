@@ -1,15 +1,15 @@
-﻿namespace Kalkulator_typy_generyczne
+﻿namespace GenericTypesCalculator
 {
-    static class Kalkulator<T>
+    static class Calculator<T>
     {
         static T x;
         static T y;
         public static void start()
         {
-        ponowny_wybor:
-            Console.WriteLine("Kalkulator\nWpisz pierwszą liczbę: ");
+        choise:
+            Console.WriteLine("\nInput first number: ");
             string x_str = Console.ReadLine();
-            Console.WriteLine("\nWpisz drugą liczbę: ");
+            Console.WriteLine("\nInput second number: ");
             string y_str = Console.ReadLine();
             dynamic x_dynamic;
             dynamic y_dynamic;
@@ -24,9 +24,9 @@
                 y_dynamic = y;
             }
 
-            catch (Exception ex) { Console.WriteLine("\nBląd w konwersji!\n"); goto ponowny_wybor; }
+            catch (Exception ex) { Console.WriteLine("\nConversion error!\n"); goto choise; }
 
-            Console.WriteLine("x + y = " + (x_dynamic + y_dynamic) + "\n");
+            Console.WriteLine("\nx + y = " + (x_dynamic + y_dynamic) + "\n");
             Console.WriteLine("x - y = " + (x_dynamic - y_dynamic) + "\n");
             Console.WriteLine("x * y = " + (x_dynamic * y_dynamic) + "\n");
             if (y_dynamic != 0)
@@ -36,10 +36,10 @@
             }
             else
             {
-                Console.WriteLine("x / y nie ma wartości, gdyż y wynosi 0!\n");
-                Console.WriteLine("x % y nie ma wartości, gdyż y wynosi 0!\n");
+                Console.WriteLine("x / y has no value, because y equals 0!\n");
+                Console.WriteLine("x % y has no value, because y equals 0!\n");
             }
-            goto ponowny_wybor;
+            goto choise;
 
         }
     }

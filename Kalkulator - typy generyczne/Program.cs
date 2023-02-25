@@ -1,11 +1,10 @@
-﻿namespace Kalkulator_typy_generyczne
+﻿namespace GenericTypesCalculator
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Menu.wypisz_menu();
-
+            Menu.writeMenu();
         }
     }    
 }
